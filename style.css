@@ -8,9 +8,11 @@ body{
 .childImg{
     background-image: url("child@2x2.png");
     background-size: cover;
-    height: 713px;
+    /* height: 713px; */
+    height: calc(100vw/2.0);
     width: calc(100%/2.8);
     margin: -8px;
+    z-index: 1;
 }
 .content{
     background-color: #02353c;
@@ -21,9 +23,16 @@ body{
 }
 .logo{
     height: calc(100%/9);
+    width: 250px;
     flex-direction: row;
     display: flex;
     justify-content:end;
+}
+.main {
+    position: relative;
+    left: 50%;
+    transform: translateX(-28%);
+    top: 5%;
 }
 .logo .nabta{
     margin: 10px;

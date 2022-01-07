@@ -20,6 +20,7 @@ body{
 }
 .logo{
     height: 100%;
+    width: 250px;
     flex-direction: row;
     display: flex;
     justify-content:end;
@@ -64,7 +65,7 @@ body{
     cursor: pointer;
 
 }
-.pationt:hover{
+.Patient:hover{
     display: flex;
     background-color: #fff;
     border: none;
@@ -100,7 +101,7 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-.tools:hover{
+.supplies:hover{
     display: flex;
     background-color: #fff;
     border: none;
@@ -151,6 +152,13 @@ body{
     margin-top: 20px;
     display: flex;
     justify-content: space-evenly;
+}
+.btn {
+    position: absolute;
+    bottom: -30px;
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .edietDe{
     width: 550px;
@@ -205,7 +213,7 @@ body{
     cursor: pointer;
     font-family:'Tajawal', sans-serif ;
 }
-#pationt{
+#Patient{
     background-color: #02353c;
     display: flex;
     color: #30AE7D;
@@ -218,7 +226,7 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-#pationt a{
+#Patient a{
     color: #30AE7D;
 }
 #employee{
@@ -254,7 +262,7 @@ body{
 #spicialest a{
     color: #30AE7D;
 }
-#tools{
+#supplies{
     background-color: #02353c;
     display: flex;
     color: #30AE7D;
@@ -267,7 +275,7 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-#tools a{
+#supplies a{
     color: #30AE7D;
 }
 .out{
@@ -496,4 +504,229 @@ table tbody tr:nth-of-type(even){
     filter: drop-shadow(5px 5px 6px rgba(0, 0, 0, 0.161));
     cursor: pointer;
     transition: all .5;
+}
+.edpage{
+    width: 65%;
+    height: 75%;
+    border: solid 5px #30AE7D ;
+    border-radius: 20px;
+    margin-top: 30px !important;
+    margin: auto;
+}
+form label{
+    position: relative;
+}
+#search{
+    width:calc( 100% + 1px);
+    background-color: #30AE7D;
+    color: #02353c;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family:'Tajawal', sans-serif  ;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-right: -1px;
+}
+#search .input-box {
+    display: flex;
+    justify-content: center;
+}
+#search .input-box input{
+    width: 30%;
+    background-color: #02353c;
+    color: #30AE7D;
+    font-size: 16px;
+    font-weight: bolder;
+    font-family:'Tajawal', sans-serif  ;
+    border: #02353c solid 1px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    height: 35px;
+    padding-right:15px ;
+    outline: none;
+}
+.searchbu{
+    width: 35px;
+    height:35px;
+    border-radius:50% ;
+    padding: 0;
+    background-color: #30AE7D;
+    margin-right: 5px;
+}
+#search-icons:hover{
+    color: #02353c;
+    background-color: #fff;
+    border:0;
+    font-weight: bolder;
+    border-radius: 50%;
+    width: 30px;
+    text-align: center;
+    height: 30px;
+    cursor: pointer;
+}
+
+#search-icons{
+    color: #30AE7D;
+    border:0;
+    border-radius: 50%;
+    width: 30px;
+    text-align: center;
+    height:30px;
+    cursor: pointer;
+    background-color: #02353c;
+}
+.pageName{
+    color: #30AE7D;
+    font-size: 40px;
+    font-family:'Tajawal', sans-serif  ;
+    text-align: center; 
+    background: #02353c;
+    padding: 0 15px;
+    position: relative;
+    top: 22px;
+}
+.edform{
+    width: calc(100% + 1px);
+    height: calc(90% + 6px);
+    margin-right: -1px;
+    padding-top: 10px;
+}
+.pUserDetails{
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    filter: drop-shadow(5px 5px 6px rgba(0, 0, 0, 0.161));
+    
+}
+.pUserDetails .input-box{
+    margin-bottom: 5px;
+    width: 350px;
+    margin-top: 0px;
+    font-family:'Tajawal', sans-serif  ;
+
+}
+.pUserDetails .input-box .details{
+    font-weight: bolder;
+    display: block;
+    color: #30AE7D;
+    font-size: 18px;
+}
+.pUserDetails .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    background-color: #02353c;
+    border: 1px solid #30AE7D;
+    color: #30AE7D;
+    padding-right:15px ;
+    font-weight: bolder;
+
+}
+#eddep{
+    filter: drop-shadow(5px 5px 6px rgba(0, 0, 0, 0.161));
+}
+#eddep #check{
+    width: 350px;
+    display: flex;
+    border: 1px #30AE7D solid;
+    padding: 15px 0;
+    font-size: 16px;
+    color: #30AE7D;
+    font-weight: bolder;
+    font-family:'Tajawal', sans-serif  ;
+    border-radius: 5px;
+    justify-content: space-around;
+}
+.pUserDetails #eddep #check input{
+    display: none;
+}
+input[type=checkbox] + label{
+    display: flex;
+    margin: .5em;
+    cursor: pointer;
+    padding:10px;
+}
+input[type=checkbox] + label::before{
+    content: "\2714";
+    border: 0.1em solid #30AE7D ;
+    border-radius:.2em ;
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    padding-bottom: 0.3em;
+    margin-left:0.4em ;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+}
+input[type=checkbox] + label:active::before{
+    transform: scale(0);
+}
+input[type=checkbox]:checked + label::before{
+    background-color:#30AE7D ;
+    color: #02353c;
+}
+#history{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    background-color: #02353c;
+    border: 1px solid #30AE7D;
+    color: #30AE7D;
+    padding-left:2px ;
+    text-align: end;
+    font-size: 16px;
+}
+#history::-webkit-calendar-picker-indicator {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23bbbbbb" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+    filter: invert(.7);
+    cursor: pointer;
+}
+.subedietDe{
+    width: 350px;
+    background-color: #30AE7D;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #02353c;
+    text-align: center;
+    border-radius: 10px;
+    border: #30AE7D solid 5px;
+    height: 45px;
+    cursor: pointer;
+    font-family:'Tajawal', sans-serif ;
+
+}
+.subedietDe:hover{
+    width: 350px;
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #02353c;
+    text-align: center;
+    border-radius: 10px;
+    border: #fff solid 5px;
+    height: 45px;
+    cursor: pointer;
+    font-family:'Tajawal', sans-serif ;
+}
+.other input[type=checkbox] + label{
+    display: flex;
+    margin: .5em;
+    cursor: pointer;
+    padding:18px 0;
+}
+.addform{
+    width: calc(100% + 1px);
+    height: calc(100% );
+    margin-right: -1px;
+    /* background-color: #02353c; */
+    border-radius: 15px;
+    padding-top: 20px;
+    filter: drop-shadow(5px 5px 6px rgba(0, 0, 0, 0.161));
 }

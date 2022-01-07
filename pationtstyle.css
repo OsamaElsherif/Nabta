@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap');
+body{
+    background-color: #02353c;
+}
+#background{
+    background-image: url("background.png");
+    background-size: cover;
+    height: 641px;
+    width: calc(100% + 16px);
+    margin: -8px;
+}
+.navbar{
+    background-color: #30AE7D;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    margin: -8px;
+    align-items: center;
+    padding: 0 30px;
+}
+.logo{
+    height: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content:end;
+}
+.logo .nabta{
+    margin: 5px;
+}
+.links{
+    list-style: none;
+    display: inline-flex;
+    width: calc(100%/1.5);
+    margin-right: -100px;
+    height: calc(100%);
+    margin-top: 0px;
+    
+}
+.links li{
+    display: flex;
+    background-color: #30AE7D;
+    border: none;
+    height: 100%;
+    font-family:'Tajawal', sans-serif ;
+    font-size: 30px;
+    font-weight: bolder;
+    width: calc(100%/4);
+    justify-content: space-around;
+    align-items: center;
+}
+.links li a {
+    text-decoration: none;
+    color: #02353c;
+}
+.navbar .out .outnavbut{
+    background-color: #30AE7D;
+    border: solid 5px #02353c;
+    border-radius: 30px;
+    font-size: 20px;
+    color: #02353c;
+    font-weight: bold;
+    width: 100px;
+    padding: 5px;
+    height: 100%;
+    cursor: pointer;
+}
+.navbar .out .outnavbut:hover{
+    background-color: #02353c;
+    border: solid 5px #02353c;
+    border-radius: 30px;
+    font-size: 20px;
+    color: #30AE7D;
+    font-weight: bold;
+    width: 100px;
+    padding: 5px;
+    height: 100%;
+    cursor: pointer;
+}
+.edite:hover , .show:hover , .games:hover{
+    display: flex;
+    background-color: #fff;
+    border: none;
+    height: 100%;
+    font-family:'Tajawal', sans-serif ;
+    font-size: 30px;
+    font-weight: bolder;
+    width: calc(100%/1);
+    justify-content: space-around;
+    align-items: center;
+}
+.fa:hover{
+    display: flex;
+    background-color: #fff;
+    height: 100%;
+    width: calc(100%/1.5);
+    justify-content: space-around;
+    align-items: center;
+}
+.content{
+    background-color: #02353c;
+    background-size: cover;
+    height: 641px;
+    width: calc(100% + 16px);
+    margin: -8px;
+    text-align: center;
+}
+.pageName{
+    color: #30AE7D;
+    font-size: 40px;
+    font-family:'Tajawal', sans-serif  ;
+    text-align: center; 
+}
+.edpage{
+    width: 55%;
+    height: 75%;
+    border: solid 5px #30AE7D ;
+    border-radius: 20px;
+    margin-top: -30px;
+    margin: auto;
+}
+.edform{
+    width: calc(100% + 1px);
+    height: 100%;
+    margin-right: -1px;
+}
+.pUserDetails{
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    filter: drop-shadow(5px 5px 6px rgba(0, 0, 0, 0.161));
+}
+.pUserDetails .input-box{
+    margin-bottom: 5px;
+    width: 350px;
+    margin-top: 0px;
+    font-family:'Tajawal', sans-serif  ;
+    padding-top: 10px;
+}
+.pUserDetails .input-box .details{
+    font-weight: bolder;
+    display: block;
+    color: #30AE7D;
+    font-size: 18px;
+}
+.pUserDetails .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    background-color: #02353c;
+    border: 1px solid #30AE7D;
+    color: #30AE7D;
+    padding-right:15px ;
+    font-weight: bolder;
+
+}
+.button{
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.subedietDe{
+    width: 350px;
+    background-color: #30AE7D;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #02353c;
+    text-align: center;
+    border-radius: 10px;
+    border: #30AE7D solid 5px;
+    height: 45px;
+    cursor: pointer;
+    font-family:'Tajawal', sans-serif ;
+
+}
+.subedietDe:hover{
+    width: 350px;
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #02353c;
+    text-align: center;
+    border-radius: 10px;
+    border: #fff solid 5px;
+    height: 45px;
+    cursor: pointer;
+    font-family:'Tajawal', sans-serif ;
+}
+#history{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    background-color: #02353c;
+    border: 1px solid #30AE7D;
+    color: #30AE7D;
+    padding-left:2px ;
+    text-align: end;
+    font-size: 16px;
+}
+#history::-webkit-calendar-picker-indicator {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23bbbbbb" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+    filter: invert(.7);
+    cursor: pointer;
+}
+
+#eddep{
+    filter: drop-shadow(5px 5px 6px rgba(0, 0, 0, 0.161));
+}
+#eddep #check{
+    width: 350px;
+    display: flex;
+    border: 1px #30AE7D solid;
+    padding: 15px 0;
+    font-size: 16px;
+    color: #30AE7D;
+    font-weight: bolder;
+    font-family:'Tajawal', sans-serif  ;
+    border-radius: 5px;
+    justify-content: space-around;
+}
+.pUserDetails #eddep #check input{
+    display: none;
+}
+input[type=checkbox] + label{
+    display: flex;
+    margin: .5em;
+    cursor: pointer;
+    padding:10px;
+}
+input[type=checkbox] + label::before{
+    content: "\2714";
+    border: 0.1em solid #30AE7D ;
+    border-radius:.2em ;
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    padding-bottom: 0.3em;
+    margin-left:0.4em ;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+}
+input[type=checkbox] + label:active::before{
+    transform: scale(0);
+}
+input[type=checkbox]:checked + label::before{
+    background-color:#30AE7D ;
+    color: #02353c;
+}
+.out{
+    display: flex;
+    justify-content: space-between;
+    width: 11%;
+    align-items: center;
+}
+.material-icons{
+    color: #02353c;
+    border: #02353c solid 5px;
+    border-radius: 50%;
+    width: 45px;
+    text-align: center;
+    padding: 5px;
+    height: 100%;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+.material-icons:hover{
+    color: #30AE7D;
+    border: #02353c solid 5px;
+    border-radius: 50%;
+    width: 45px;
+    text-align: center;
+    padding: 5px;
+    height: 100%;
+    cursor: pointer;
+    background-color: #02353c;
+}

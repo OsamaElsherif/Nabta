@@ -1,5 +1,4 @@
 <?php
-include('sessions.php');  
 include('API.php');  
 if ($_SESSION['LOGIN']) {
     header('Location: dashboard.php');

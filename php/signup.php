@@ -19,7 +19,7 @@ if(isset($_POST['signup'])) {
     }
     
     // insert user
-    $api_link = "$link/insert/User/values/NULL,'$email',$PName','$password','patient'";
+    $api_link = "$link/insert/User/values/NULL,'$email','$PName','$password','patient'";
     $request = new Request();
     $create = $request->Create($api_link);
     // print($create);
@@ -33,9 +33,9 @@ if(isset($_POST['signup'])) {
         die("ERR in API Request");
     }
     $user = json_decode($create[1], true);
-    $user_id = $user['user_id'][0];
+    $user_id = $user['ID'][0];
     // insert a patient
-    $api_link = "$link/insert/patient/values/'$NID','$PName','$mobnum','$address','$date',NULL,'$email',$user_id,$gender";
+    $api_link = "$link/insert/Patient/values/'$NID','$PName','$mobnum','$address','$date',NULL,'$email', $user_id, $gender";
     $create = $request->Create($api_link);
     if (!$create[0]) {
         die("ERR in API Request");

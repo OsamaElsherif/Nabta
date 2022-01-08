@@ -56,7 +56,7 @@ include('php/objects.php');
                         if (isset($_POST['search'])) {
                                 $fid = $_POST['id'];
                                 $request = new Request();
-                                $api_link = "$link/select/*/Patient/where/patient_id/=/$fid";
+                                $api_link = "$link/select/*/Patient/where/ID/=/$fid";
                                 $create = $request->Create($api_link);
                                 if (!$create[0]) {
                                     die("ERR in API Request");
@@ -81,21 +81,34 @@ include('php/objects.php');
                             $email = $_POST['email'];
                             $department = $_POST['d'];
                             $request = new Request();
-                            $api_link = "$link/update/Patient/set/fullname/$name/where/patient_id/=/$fid";
+                            $api_link = "$link/update/Patient/set/fullname/$name/where/ID/=/$fid";
                             $create = $request->Create($api_link);
-                            $api_link = "$link/update/Patient/set/nid/$nid/where/patient_id/=/$fid";
+                            $api_link = "$link/update/Patient/set/nid/$nid/where/ID/=/$fid";
                             $create = $request->Create($api_link);
-                            $api_link = "$link/update/Patient/set/patient_birthdate/$date/where/patient_id/=/$fid";
+                            $api_link = "$link/update/Patient/set/patient_birthdate/$date/where/ID/=/$fid";
                             $create = $request->Create($api_link);
-                            $api_link = "$link/update/Patient/set/address/$address/where/patient_id/=/$fid";
+                            $api_link = "$link/update/Patient/set/address/$address/where/ID/=/$fid";
                             $create = $request->Create($api_link);
-                            $api_link = "$link/update/Patient/set/phonenumber/$mobnum/where/patient_id/=/$fid";
+                            $api_link = "$link/update/Patient/set/phonenumber/$mobnum/where/ID/=/$fid";
                             $create = $request->Create($api_link);
-                            $api_link = "$link/update/Patient/set/E_mail/$email/where/patient_id/=/$fid";
+                            $api_link = "$link/update/Patient/set/E_mail/$email/where/ID/=/$fid";
                             $create = $request->Create($api_link);
-                            $api_link = "$link/update/Patient/set/department_id/$department/where/patient_id/=/$fid";
+                            $api_link = "$link/update/Patient/set/department_id/$department/where/ID/=/$fid";
                             $create = $request->Create($api_link);
                         }
+                        // if (isset($_POST['add'])) {
+                        //     $fid = $_POST['id'];
+                        //     $name = $_POST['pname'];
+                        //     $nid = $_POST['nid'];
+                        //     $date = $_POST['date'];
+                        //     $address = $_POST['address'];
+                        //     $mobnum = $_POST['mobnum'];
+                        //     $email = $_POST['email'];
+                        //     $department = $_POST['d'];
+                        //     $request = new Request();
+                        //     $api_link = "$link/insert/Patient/values/'$nid','$name','$mobnum','$address','$date',NULL,'$email', $user_id, $gender";
+                        //     $create = $request->Create($api_link);
+                        // }
                     ?>
                        <div class="pUserDetails">
                            <input type="hidden" name="id" value='<?php echo $fid;?>'>
@@ -160,7 +173,8 @@ include('php/objects.php');
                             </div>
                        </div>
                        <div class="button" dir="rtl">
-                        <button type="submit" name='update' class="subedietDe"> تعديل البيانات</button> 
+                        <button type="submit" name='update' class="subedietDe"> تعديل البيانات</button>
+                        <button type="submit" name='add' class="subedietDe"> إضافة مريض </button> 
                         </div>
                     </form>
                 </div>

@@ -1,5 +1,14 @@
 <?php
-// include('php/check.php');
+session_start();
+$login = $_SESSION['LOGIN'];
+$user_type = $_SESSION['type'];
+if ($login) {
+    if ($user_type == 'patient') {
+        header('Location: /nabta/Nabta/واجهة مريض.php');
+    } else {
+        header('Location: /nabta/Nabta/dashboard.php');
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="rlt">

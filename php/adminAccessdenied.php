@@ -1,6 +1,6 @@
 <?php
-include('sessions.php');
-if ($user_type != 'Patient') {
+// die($user_type);
+if ($user_type != 'patient') {
     header('Location: /nabta/Nabta/dashboard.php');
 }
 ?>

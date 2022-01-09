@@ -1,6 +1,6 @@
 <?php
 include('sessions.php');
-if ($user_type == 'Patient') {
+if ($user_type == 'patient') {
     header('Location: /nabta/Nabta/واجهة مريض.php');
 } else {
     session_start();

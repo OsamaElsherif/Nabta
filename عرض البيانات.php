@@ -1,12 +1,12 @@
 <?php
-include('php/adminAccessdenied.php');
+// include('php/adminAccessdenied.php');
 include('php/sessions.php');
 include('php/API.php');
 
 
 $id = $user_json['ID'][0];
 $request = new Request();
-$apilink = "$link/select/*/Patient/where/ID/=/$id";
+$apilink = "$link/select/*/Patient/where/user_id/=/$id";
 $create = $request->Create($apilink);
 $user = $create[1];
 $user = json_decode($user, true);

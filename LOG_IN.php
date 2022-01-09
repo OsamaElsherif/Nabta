@@ -1,6 +1,7 @@
 <?php
 session_start();
 $login = $_SESSION['LOGIN'];
+$user = $_SESSION['USER'];
 $user_type = $_SESSION['type'];
 if ($login) {
     if ($user_type == 'patient') {

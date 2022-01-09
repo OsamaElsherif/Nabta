@@ -43,6 +43,6 @@ if(isset($_POST['signup'])) {
 
     $_SESSION['USER'] = $user;
     $_SESSION['LOGIN'] = TRUE;
-    header('Location: ../واجهة مريض.php');
+    header('Location: check.php');
 }
 ?>

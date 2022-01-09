@@ -1,5 +1,5 @@
 <?php
-include('php/adminAccessdenied.php');
+// include('php/adminAccessdenied.php');
 include('php/sessions.php');
 include('php/API.php');
 

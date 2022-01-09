@@ -9,7 +9,7 @@ api = Flask(__name__)
 server_name = "localhost"
 database_name = "NABTA"
 driver = "ODBC+Driver+17+for+SQL+Server"
-engine = sql.create_engine(f'mssql+pyodbc://sa:Osama_3502@{server_name}/{database_name}?driver={driver}', echo = True)
+engine = sql.create_engine(f'mssql+pyodbc://{server_name}/{database_name}?driver={driver}', echo = True)
 
 # create api endpoints
 # main endpoint

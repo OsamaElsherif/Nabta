@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 session_start();
 $login = $_SESSION['LOGIN'];
 $user = $_SESSION['USER'];

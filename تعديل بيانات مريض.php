@@ -29,7 +29,7 @@ include('php/objects.php');
                     print($create_navbar);
                  ?>
                  <div class="out">
-                    <i class="material-icons"><a href="HOME_PAGE1.html">home</a></i>
+                 <i class="material-icons"><a href="dashboard.php">home</a></i>
                     <a href="HOME_PAGE.html"> 
                     <button class="outnavbut"> خروج</button> </a>
                 </div>

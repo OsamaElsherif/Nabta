@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 // include('php/adminAccessdenied.php');
 include('php/sessions.php');
 include('php/API.php');

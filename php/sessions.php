@@ -12,4 +12,5 @@ $user_type = $user_json["user_type"][0];
 $_SESSION['type'] = $user_type;
 // die($user_type);
 // print_r($user_json);
+error_reporting(0);
 ?>

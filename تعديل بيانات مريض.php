@@ -174,7 +174,6 @@ include('php/objects.php');
                        </div>
                        <div class="button" dir="rtl">
                         <button type="submit" name='update' class="subedietDe"> تعديل البيانات</button>
-                        <button type="submit" name='add' class="subedietDe"> إضافة مريض </button> 
                         </div>
                     </form>
                 </div>

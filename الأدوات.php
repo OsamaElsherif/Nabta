@@ -44,10 +44,10 @@ include('php/objects.php');
                         if ($create[0]) {
                             $json_data = $create[1];
                             $json_data = json_decode($json_data, true);
-                            $args = aMake('ID', 'name', 'price', 'quantity', 'department_id');
+                            $args = aMake('ID', 'name', 'price', 'quantity', 'department_id', 'delete');
                             $table = new Table($args, $json_data);
-                            $headers = aMake('id', "الاسم", "السعر", "الكمية", "القسم");
-                            $create_table = $table->CreateTable($rows, $headers, $json_data);
+                            $headers = aMake('id', "الاسم", "السعر", "الكمية", "القسم", 'الحذف');
+                            $create_table = $table->CreateTable($rows, $headers, 'supplies');
                             print($create_table);
                         } else {
                             die ("ERR, $create[1]");

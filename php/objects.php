@@ -16,7 +16,7 @@ class Table {
         $this->json_data = $json_data;
     }
     // headers -> the header of the table as a json object
-    function CreateTable($rows, $headers) {
+    function CreateTable($rows, $headers, $table) {
         echo "<table dir='rtl'>";
         echo "<thead>";
         echo "<tr>";
@@ -38,6 +38,13 @@ class Table {
                     } else if ($this->json_data[$key][$i] == 0){
                         print('ذكر');
                     }
+                } elseif ($key == 'delete') {
+                    echo "<form action='php/delete.php?table=$table' method='post'>";
+                    echo "<input name='id' type='hidden' value='";
+                    print_r($this->json_data['ID'][$i]);
+                    echo "'>";
+                    echo "<button type='submit' name='delete' class='delete'> حذف</button>";
+                    echo "</form>";
                 } else {
                     print_r($this->json_data[$key][$i]);
                 }

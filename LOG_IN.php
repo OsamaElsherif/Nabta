@@ -43,7 +43,7 @@ if ($login) {
                     <div>
                         <input class="submit" name='login' type="submit" value="تسجيل الدخول">
                     </div>
-                    <p class="already">ليس لديك حساب ؟ <a  href="SIGN_UP.html">سجل حساب جديد</a></p>
+                    <p class="already">ليس لديك حساب ؟ <a  href="./SIGN_UP.php">سجل حساب جديد</a></p>
                 </form>
             </div>
             

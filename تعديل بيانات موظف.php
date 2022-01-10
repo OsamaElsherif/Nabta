@@ -165,6 +165,7 @@ include('php/API.php');
                        </div>
                        <div class="button" dir="rtl">
                         <button type="submit" name='update' class="subedietDe"> تعديل البيانات</button> 
+                        <a href="./إضافة موظف.php" name='add' class="subedietDe"> إضافة موظف </a>
                         </div>
                     </form>
                 </div>

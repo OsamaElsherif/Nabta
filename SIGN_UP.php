@@ -86,7 +86,7 @@ if ($login) {
                     <div>
                         <input class="submit" name="signup" type="submit" value="إنشاء حساب">
                     </div>
-                    <p class="already">لديك حساب بالفعل؟ <a  href="LOG_IN.html">سجل دخولك</a></p>
+                    <p class="already">لديك حساب بالفعل؟ <a  href="./LOG_IN.php">سجل دخولك</a></p>
                 </form>
              </div>
            

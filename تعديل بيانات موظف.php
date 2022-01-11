@@ -60,7 +60,7 @@ include('php/API.php');
                         if (isset($_POST['search'])) {
                                 $fid = $_POST['id'];
                                 $request = new Request();
-                                $api_link = "$link/select/*/Employee/where/ID/=/$fid";
+                                $api_link = "$link/select/*/Employee/where/ID/=/$fid/fasle";
                                 $create = $request->Create($api_link);
                                 if (!$create[0]) {
                                     die("ERR in API Request");

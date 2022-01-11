@@ -27,7 +27,7 @@ if(isset($_POST['signup'])) {
         die("ERR in API aa Request");
     }
     // select user id
-    $api_link = "$link/select/*/User/where/E_mail/=/$email";
+    $api_link = "$link/select/*/User/where/E_mail/=/$email/false";
     $create = $request->Create($api_link);
     if (!$create[0]) {
         die("ERR in API Request");

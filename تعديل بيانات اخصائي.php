@@ -161,7 +161,7 @@ include('php/objects.php');
                        </div>
                        <div class="button" dir="rtl">
                         <button type="submit" name='update' class="subedietDe"> تعديل البيانات</button> 
-                        <a href="./إضافة.html" name='add' class="subedietDe"> إضافة مريض </a>
+                        <a href="./إضافة أخصائي.php" name='add' class="subedietDe"> إضافة أخصائي </a>
                         </div>
                     </form>
                 </div>

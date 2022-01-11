@@ -31,7 +31,7 @@ def normalSelect(attr, tablename):
     # old method without join
     # sql = f"SELECT {attr} FROM [{tablename}]"
     # new method with join
-    sql = f"SELECT [{tablename}].{attr}, Department.department_name FROM [{tablename}] INNER JOIN [Department] ON [{tablename}].department_id = Department.[ department_ID]"
+    sql = f"SELECT [{tablename}].{attr}, Department.department_name FROM [{tablename}] LEFT JOIN [Department] ON [{tablename}].department_id = Department.[ department_ID]"
     # execute the sql
     result = pd.read_sql(sql, engine).to_json()
 

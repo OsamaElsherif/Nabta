@@ -7,7 +7,7 @@ include('php/API.php');
 
 $id = $user_json['ID'][0];
 $request = new Request();
-$apilink = "$link/select/*/Patient/where/user_id/=/$id";
+$apilink = "$link/select/*/Patient/where/user_id/=/$id/false";
 $create = $request->Create($apilink);
 $user = $create[1];
 $user = json_decode($user, true);

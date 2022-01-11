@@ -46,7 +46,7 @@ include('php/objects.php');
                         if ($create[0]) {
                             $json_data = $create[1];
                             $json_data = json_decode($json_data, true);
-                            $args = aMake('ID', 'fullname', 'nid', 'gender', 'patient_birthdate', 'phonenumber', 'address', 'department_id', 'delete');
+                            $args = aMake('ID', 'fullname', 'nid', 'gender', 'patient_birthdate', 'phonenumber', 'address', 'department_name', 'delete');
                             $table = new Table($args, $json_data);
                             $headers = aMake('id',"الاسم", "الرقم القومي", "النوع", "تاريخ الميلاد", "رقم المحمول", "العنوان", "القسم", "الحذف");
                             $create_table = $table->CreateTable($rows, $headers, 'Patient');

@@ -9,7 +9,7 @@ api = Flask(__name__)
 server_name = "localhost"
 database_name = "NABTA"
 driver = "ODBC+Driver+17+for+SQL+Server"
-engine = sql.create_engine(f'mssql+pyodbc://{server_name}/{database_name}?driver={driver}', echo = True)
+engine = sql.create_engine(f'mssql+pyodbc://sa:Osama_3502@{server_name}/{database_name}?driver={driver}', echo = True)
 
 # create api endpoints
 # main endpoint
@@ -22,13 +22,13 @@ def main():
 # main select endpoint
 # attr -> ALL values, or specified
 # tablename -> table name to select from
-@api.route('/select/<string:attr>/<string:tablename>/')
+@api.route('/select/<string:attr>/<string:tablename>')
 def normalSelect(attr, tablename):
     # sql statement
     # old method without join
     # sql = f"SELECT {attr} FROM [{tablename}]"
     # new method with join
-    sql = f"SELECT {tablename}.{attr}, Department.department_name FROM {tablename} INNER JOIN [Department] ON {tablename}.department_id = Department.[ department_ID]"
+    sql = f"SELECT [{tablename}].{attr}, Department.department_name FROM [{tablename}] INNER JOIN [Department] ON [{tablename}].department_id = Department.[ department_ID]"
     # execute the sql
     result = pd.read_sql(sql, engine).to_json()
 
@@ -38,18 +38,29 @@ def normalSelect(attr, tablename):
 # fieldname -> the name of the table field
 # condition -> the condition that will be used in the sql (= or !=)
 # value -> the value to select due to it
-@api.route('/select/<string:attr>/<string:tablename>/where/<string:fieldname>/<string:condition>/<string:value>')
-def conditionalSelect(attr, tablename, fieldname, condition, value):
+@api.route('/select/<string:attr>/<string:tablename>/where/<string:fieldname>/<string:condition>/<string:value>/<string:join>')
+def conditionalSelect(attr, tablename, fieldname, condition, value, join):
     # sql statement
-    if value.isnumeric():
-        # old method
-        # sql = f"SELECT {attr} FROM [{tablename}] WHERE {fieldname}{condition}{value}"
-        # new method with join
-        sql = f"SELECT {tablename}.{attr}, Department.department_name FROM {tablename} INNER JOIN [Department] ON {tablename}.department_id = Department.[ department_ID] WHERE {fieldname}{condition}{value}"
+    if join == 'true':
+        if value.isnumeric():
+            # old method
+            # sql = f"SELECT {attr} FROM [{tablename}] WHERE {fieldname}{condition}{value}"
+            # new method with join
+            sql = f"SELECT [{tablename}].{attr}, Department.department_name FROM [{tablename}] INNER JOIN [Department] ON [{tablename}].department_id = Department.[ department_ID] WHERE {fieldname}{condition}{value}"
+        else:
+            sql = f"SELECT [{tablename}].{attr}, Department.department_name FROM [{tablename}] INNER JOIN [Department] ON [{tablename}].department_id = Department.[ department_ID] WHERE {fieldname}{condition}'{value}'"
+        # execute the sql
+        result = pd.read_sql(sql, engine).to_json()
     else:
-        sql = f"SELECT {tablename}.{attr}, Department.department_name FROM {tablename} INNER JOIN [Department] ON {tablename}.department_id = Department.[ department_ID] WHERE {fieldname}{condition}'{value}'"
-    # execute the sql
-    result = pd.read_sql(sql, engine).to_json()
+        if value.isnumeric():
+            # old method
+            # sql = f"SELECT {attr} FROM [{tablename}] WHERE {fieldname}{condition}{value}"
+            # new method with join
+            sql = f"SELECT {attr} FROM [{tablename}] WHERE {fieldname}{condition}{value}"
+        else:
+            sql = f"SELECT {attr} FROM [{tablename}] WHERE {fieldname}{condition}'{value}'"
+        # execute the sql
+        result = pd.read_sql(sql, engine).to_json()
 
     return json.loads(result)
 

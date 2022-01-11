@@ -20,7 +20,7 @@ $did = $_GET['id'];
     <body>
         <div class="container">
             <div class="navbar" dir="rtl">
-                <div class="../logo">
+                <div class="logo">
                     <img src="../logo2.png" alt="logo"  class="nabta">
                  </div>
                  <?php
@@ -39,14 +39,14 @@ $did = $_GET['id'];
             <div class="content">
                 <span class="tableName">قسم بطء التعلم</span>
                 <div class="table">
-                <?php
+                    <?php
                         $req = new Request();
                         if ($type == 'spicialest') {
-                            $apilink = "$link/select/*/employee/where/department_id/=/$did/and/specialty/!=/none";
+                            $apilink = "$link/select/*/employee/where/department_id/=/$did/and/specialty/!=/none/true";
                         } elseif ($type == 'employee') {
-                            $apilink = "$link/select/*/$type/where/department_id/=/$did/and/specialty/=/none";
+                            $apilink = "$link/select/*/$type/where/department_id/=/$did/and/specialty/=/none/true";
                         } else {
-                            $apilink = "$link/select/*/$type/where/department_id/=/$did";
+                            $apilink = "$link/select/*/$type/where/department_id/=/$did/true";
                         }
                         $create = $req->Create($apilink);
                         $rows = count(json_decode($create[1], true)['ID']);

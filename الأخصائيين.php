@@ -39,7 +39,7 @@ include('php/objects.php');
                 <div class="table">
                     <?php
                         $req = new Request();
-                        $apilink = "$link/select/*/Employee/where/specialty/!=/none";
+                        $apilink = "$link/select/*/Employee/where/specialty/!=/none/true";
                         $create = $req->Create($apilink);
                         $rows = count(json_decode($create[1], true)['ID']);
                         if ($create[0]) {

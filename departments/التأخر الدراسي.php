@@ -42,11 +42,11 @@ $did = $_GET['id'];
                     <?php
                         $req = new Request();
                         if ($type == 'spicialest') {
-                            $apilink = "$link/select/*/employee/where/department_id/=/$did/and/specialty/!=/none";
+                            $apilink = "$link/select/*/employee/where/department_id/=/$did/and/specialty/!=/none/true";
                         } elseif ($type == 'employee') {
-                            $apilink = "$link/select/*/$type/where/department_id/=/$did/and/specialty/=/none";
+                            $apilink = "$link/select/*/$type/where/department_id/=/$did/and/specialty/=/none/true";
                         } else {
-                            $apilink = "$link/select/*/$type/where/department_id/=/$did";
+                            $apilink = "$link/select/*/$type/where/department_id/=/$did/true";
                         }
                         $create = $req->Create($apilink);
                         $rows = count(json_decode($create[1], true)['ID']);

@@ -40,7 +40,7 @@ include('php/objects.php');
                     <!-- <table dir="rtl"> -->
                         <?php
                         $req = new Request();
-                        $apilink = "$link/select/*/Patient/";
+                        $apilink = "$link/select/*/Patient";
                         $create = $req->Create($apilink);
                         $rows = count(json_decode($create[1], true)['ID']);
                         if ($create[0]) {

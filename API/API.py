@@ -25,7 +25,10 @@ def main():
 @api.route('/select/<string:attr>/<string:tablename>/')
 def normalSelect(attr, tablename):
     # sql statement
-    sql = f"SELECT {attr} FROM [{tablename}]"
+    # old method without join
+    # sql = f"SELECT {attr} FROM [{tablename}]"
+    # new method with join
+    sql = f"SELECT {tablename}.{attr}, Department.department_name FROM {tablename} INNER JOIN [Department] ON {tablename}.department_id = Department.[ department_ID]"
     # execute the sql
     result = pd.read_sql(sql, engine).to_json()
 
@@ -39,9 +42,12 @@ def normalSelect(attr, tablename):
 def conditionalSelect(attr, tablename, fieldname, condition, value):
     # sql statement
     if value.isnumeric():
-        sql = f"SELECT {attr} FROM [{tablename}] WHERE {fieldname}{condition}{value}"
+        # old method
+        # sql = f"SELECT {attr} FROM [{tablename}] WHERE {fieldname}{condition}{value}"
+        # new method with join
+        sql = f"SELECT {tablename}.{attr}, Department.department_name FROM {tablename} INNER JOIN [Department] ON {tablename}.department_id = Department.[ department_ID] WHERE {fieldname}{condition}{value}"
     else:
-        sql = f"SELECT {attr} FROM [{tablename}] WHERE {fieldname}{condition}'{value}'"
+        sql = f"SELECT {tablename}.{attr}, Department.department_name FROM {tablename} INNER JOIN [Department] ON {tablename}.department_id = Department.[ department_ID] WHERE {fieldname}{condition}'{value}'"
     # execute the sql
     result = pd.read_sql(sql, engine).to_json()
 

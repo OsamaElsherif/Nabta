@@ -55,22 +55,22 @@ $did = $_GET['id'];
                             $json_data = json_decode($json_data, true);
                             // print_r($json_data);
                             if ($type == 'Patient') {
-                                $args = aMake('ID', 'fullname', 'nid', 'gender', 'patient_birthdate', 'phonenumber', 'address', 'department_id');
+                                $args = aMake('ID', 'fullname', 'nid', 'gender', 'patient_birthdate', 'phonenumber', 'address', 'delete');
                                 $table = new Table($args, $json_data);
-                                $headers = aMake('id',"الاسم", "الرقم القومي", "النوع", "تاريخ الميلاد", "رقم المحمول", "العنوان", "القسم");
-                                $create_table = $table->CreateTable($rows, $headers, $json_data);
+                                $headers = aMake('id',"الاسم", "الرقم القومي", "النوع", "تاريخ الميلاد", "رقم المحمول", "العنوان", "الحذف");
+                                $create_table = $table->CreateTable($rows, $headers, 'Patient');
                                 print($create_table);
                             } elseif ($type == 'supplies') {
-                                $args = aMake('ID', 'name', 'price', 'quantity', 'department_id');
+                                $args = aMake('ID', 'name', 'price', 'quantity', 'delete');
                                 $table = new Table($args, $json_data);
-                                $headers = aMake('id', "الاسم", "السعر", "الكمية", "القسم");
-                                $create_table = $table->CreateTable($rows, $headers, $json_data);
+                                $headers = aMake('id', "الاسم", "السعر", "الكمية", "الحذف");
+                                $create_table = $table->CreateTable($rows, $headers, 'supplies');
                                 print($create_table);
                             } else {
-                                $args = aMake('ID', 'Name', 'gender', 'employee_birthdate', 'phone_number', 'Address', 'department_id');
+                                $args = aMake('ID', 'Name', 'gender', 'employee_birthdate', 'phone_number', 'Address', 'delete');
                                 $table = new Table($args, $json_data);
-                                $headers = aMake('id',"الاسم", "النوع", "تاريخ الميلاد", "رقم المحمول", "العنوان", "القسم");
-                                $create_table = $table->CreateTable($rows, $headers, $json_data);
+                                $headers = aMake('id',"الاسم", "النوع", "تاريخ الميلاد", "رقم المحمول", "العنوان", "الحذف");
+                                $create_table = $table->CreateTable($rows, $headers, 'Employee');
                                 print($create_table);
                             }
                         } else {

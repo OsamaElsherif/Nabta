@@ -30,12 +30,12 @@ if(isset($_POST['add'])) {
     $user_id = $user['ID'][0];
 
     // insert a employee
-    $api_link = "$link/insert/Employee/values/'$PName', $gender, '$mobnum','$address','$date', $department_ID,'none', '$email', $user_id, '$national_id'";
+    $api_link = "$link/insert/Employee/values/'$PName', $gender, '$mobnum','$address','$date', $department_ID,'doctor', '$email', $user_id, '$national_id'";
     $create = $request->Create($api_link);
     if (!$create[0]) {
         die("ERR in API Request");
     }
-    header('Location: الموظفين.php');
+    header('Location: الأخصائيين.php');
 }
 ?>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ if(isset($_POST['add'])) {
      <meta charset="utf-8"/>
      <meta http-equiv="X-UA-Compatible" content="device-width"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>إضافة موظف </title>
+     <title>إضافة أخصائي </title>
      <link rel="stylesheet" href="tempstyle.css">
      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -75,7 +75,7 @@ if(isset($_POST['add'])) {
             <div class="content">
                 <span class="pageName">إضافة البيانات</span>
                 <div class="edpage" dir="rtl">
-                    <form class="edform" action="إضافة موظف.php" method="POST">
+                    <form class="edform" action="إضافة أخصائي.php" method="POST">
                        <div class="pUserDetails">
                            <div>
                                 <div class="input-box">

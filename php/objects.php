@@ -39,7 +39,7 @@ class Table {
                         print('ذكر');
                     }
                 } elseif ($key == 'delete') {
-                    echo "<form action='php/delete.php?table=$table' method='post'>";
+                    echo "<form action='/nabta/Nabta/php/delete.php?table=$table' method='post'>";
                     echo "<input name='id' type='hidden' value='";
                     print_r($this->json_data['ID'][$i]);
                     echo "'>";

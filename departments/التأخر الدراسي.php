@@ -42,9 +42,9 @@ $did = $_GET['id'];
                     <?php
                         $req = new Request();
                         if ($type == 'spicialest') {
-                            $apilink = "$link/select/*/employee/where/department_id/=/$did/and/specialty/!=/none/true";
+                            $apilink = "$link/select/*/employee/where/department_id/=/$did/and/specialty/!=/none";
                         } elseif ($type == 'employee') {
-                            $apilink = "$link/select/*/$type/where/department_id/=/$did/and/specialty/=/none/true";
+                            $apilink = "$link/select/*/$type/where/department_id/=/$did/and/specialty/=/none";
                         } else {
                             $apilink = "$link/select/*/$type/where/department_id/=/$did/true";
                         }
@@ -67,7 +67,7 @@ $did = $_GET['id'];
                                 $create_table = $table->CreateTable($rows, $headers, 'supplies');
                                 print($create_table);
                             } else {
-                                $args = aMake('ID', 'Name', 'gender', 'employee_birthdate', 'phone_number', 'Address', 'delete');
+                                $args = aMake('ID', 'Name', 'gender', 'employee_birthdate', 'phone_namber', 'Address', 'delete');
                                 $table = new Table($args, $json_data);
                                 $headers = aMake('id',"الاسم", "النوع", "تاريخ الميلاد", "رقم المحمول", "العنوان", "الحذف");
                                 $create_table = $table->CreateTable($rows, $headers, 'Employee');
